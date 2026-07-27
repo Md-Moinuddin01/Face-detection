@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Face Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="top-bar">
+        <nav class="navbar">
+            <h2 class="logo">FaceDetect</h2>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#camera">Camera</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero fade-in">
+            <div class="hero-text">
+                <p class="small-title">AI + Computer Vision</p>
+                <h1>Real-Time Face Detection</h1>
+                <p class="subtitle">Detect faces instantly using AI-powered computer vision.</p>
+                <div class="hero-buttons">
+                    <a class="btn primary" href="#camera">Start Camera</a>
+                    <a class="btn secondary" href="#about">Learn More</a>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="webcam-card">
+                    <div class="webcam-top"></div>
+                    <div class="scan-box">
+                        <span></span>
+                    </div>
+                    <p>Live AI Vision</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section fade-in">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="card">✓ Real-time Detection</div>
+                <div class="card">✓ Fast Processing</div>
+                <div class="card">✓ AI Face Tracking</div>
+                <div class="card">✓ Webcam Support</div>
+                <div class="card">✓ Mobile Friendly</div>
+            </div>
+        </section>
+
+        <section id="camera" class="section camera-section fade-in">
+            <div class="section-title-row">
+                <h2>Live Camera</h2>
+                <span id="statusBadge" class="status off">Camera Off</span>
+            </div>
+
+            <div class="camera-layout">
+                <div class="video-card">
+                    <div id="loader" class="loader hidden"></div>
+                    <img id="videoFeed" class="video-feed" alt="Webcam feed">
+                    <div id="emptyState" class="empty-state">Camera preview will appear here</div>
+                </div>
+
+                <div class="control-card">
+                    <h3>Controls</h3>
+                    <button id="openCameraBtn" class="btn primary">Open Camera</button>
+                    <button id="startBtn" class="btn primary">Start Detection</button>
+                    <button id="stopBtn" class="btn danger">Stop Detection</button>
+                    <button id="captureBtn" class="btn secondary">Capture Image</button>
+
+                    <div class="stats">
+                        <p><strong>Current Time:</strong> <span id="clock">--:--:--</span></p>
+                        <p><strong>FPS:</strong> <span id="fps">0</span></p>
+                        <p><strong>Detected Faces:</strong> <span id="faces">0</span></p>
+                        <p><strong>Confidence:</strong> <span id="confidence">0%</span></p>
+                    </div>
+
+                    <p id="message" class="message">Ready when you are.</p>
+                    <img id="capturedImage" class="captured-image" alt="Captured face detection image">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about fade-in">
+            <h2>About This Project</h2>
+            <div class="about-grid">
+                <article class="card">
+                    <h3>What is Face Detection?</h3>
+                    <p>Face detection is a computer vision task that finds human faces in images or live video.</p>
+                </article>
+                <article class="card">
+                    <h3>How OpenCV Works</h3>
+                    <p>OpenCV reads camera frames, processes images, and draws useful shapes like boxes and points.</p>
+                </article>
+                <article class="card">
+                    <h3>How MediaPipe Detects Faces</h3>
+                    <p>MediaPipe uses trained AI models to locate faces quickly and gives a confidence score.</p>
+                </article>
+                <article class="card">
+                    <h3>Applications</h3>
+                    <p>Useful for attendance, security, AI surveillance, and smart camera systems.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="#">GitHub</a> ·
+            <a href="#">LinkedIn</a> ·
+            © 2026 Real-Time Face Detection
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
